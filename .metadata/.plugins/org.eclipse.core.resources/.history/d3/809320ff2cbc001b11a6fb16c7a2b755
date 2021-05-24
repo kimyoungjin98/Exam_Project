@@ -1,0 +1,13 @@
+package com.callor.todo.service;
+
+public interface TodoService {
+
+	public void selectAll();
+	
+	public void findById(Long td_seq);
+	
+	public void insert();
+	public void update();
+	public void delete();
+	
+}

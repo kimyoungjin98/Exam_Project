@@ -1,0 +1,48 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<c:set value="${pageContext.request.contextPath}" var="rootPath" />
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function(ev){
+	document.querySelector("button")
+	.addEventListener("click",function(ev){
+
+		let td_date = document.querySelector("input[name='td_date']")
+		let td_time = document.querySelector("input[name='td_time']")
+		let td_content = document.querySelector("input[name='td_content']")
+		let td_place = document.querySelector("input[name='td_place']")
+		
+		document.querySelector("form").submit();
+		
+	})
+	
+})
+
+</script>
+<style>
+
+	fieldset {
+		margin:auto;
+}
+
+</style>
+<body>
+<fieldset>
+	<form method="POST" class="1">
+	<label>작성일자 : </label><input name="td_date" placeholder="작성일자" type="date" value="${TD.td_date}">
+	<label>작성시각 : </label><input name="td_time" placeholder="작성시각" type="time" value="${TD.td_time}">
+	<label>할일 : </label>
+	<input name="td_content" placeholder="할일" value="${TD.td_content}"></input>
+	<label>장소 : </label><input name="td_place" placeholder="장소" value="${TD.td_place}">
+	
+		<button>저장하기</button>
+	</form>
+</fieldset>
+</body>
+</html>

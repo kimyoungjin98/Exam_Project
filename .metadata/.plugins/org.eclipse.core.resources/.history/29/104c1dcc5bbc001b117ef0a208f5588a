@@ -1,0 +1,69 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<c:set value="${pageContext.request.contextPath}" var="rootPath" />
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<script>
+document.addEventListener("DOMContentLoaded",function(ev){
+	document.querySelector("fieldset")
+	.addEventListener("click", function(ev){
+		
+		let cName = ev.target.className
+		
+		if(cName == "home"){
+			
+			document.location.href="${rootPath}"
+			
+		} else if (cName == "update"){
+						
+			document.location.href="${rootPath}/todo/update?td_seq=" + ${TD.td_seq}
+			
+		} else if (cName == "delete"){
+			
+			document.location.href="${rootPath}/todo/delete?td_seq=" + ${TD.td_seq}
+			
+		} 
+		
+	})
+})
+</script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+.jm-font {
+		font-family: 'Noto Sans KR', sans-serif;
+	}
+
+	table {
+		background-color:#1c92d2;
+	}
+	
+</style>
+<body>
+<fieldset>
+	<table >
+		<th>할일</th>
+		<th>작성일자</th>
+		<th>작성시각</th>
+		<th>장소</th>
+		<tr data-set="${TD.td_seq}">
+			<td>${TD.td_content}</td>
+			<td>${TD.td_date}</td>
+			<td>${TD.td_time}</td>
+			<td>${TD.td_place}</td>
+		</tr>
+	</table>
+	
+	<button class="home">처음으로</button>
+	<button class="update">수정하기</button>
+	<button class="delete">삭제하기</button>
+	
+</fieldset>
+
+</form>
+</body>
+</html>

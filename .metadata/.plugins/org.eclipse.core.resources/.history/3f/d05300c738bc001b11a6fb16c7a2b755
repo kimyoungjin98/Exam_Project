@@ -1,0 +1,27 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+	pageEncoding="EUC-KR"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<c:set value="${pageContext.request.contextPath}" var="rootPath" />
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+	<table border="1">
+		<th>No.</th>
+		<th>할일</th>
+		<th>작성일자</th>
+		<th>작성시각</th>
+		<th>장소</th>
+		<tr>
+			<td>${TD.td_seq}</td>
+			<td>${TD.td_content}</td>
+			<td>${TD.td_date}</td>
+			<td>${TD.td_time}</td>
+			<td>${TD.td_place}</td>
+		</tr>
+	</table>
+</body>
+</html>

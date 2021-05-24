@@ -1,0 +1,38 @@
+package com.callor.todo.config;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+public class DBConnect {
+
+	private static Connection dbConn;
+	
+	static {
+		
+		String driver = "";
+		String url = "";
+		String user = "";
+		String pw = "";
+		
+		try {
+			Class.forName(driver);
+			
+			dbConn = DriverManager.getConnection(url, user, pw);
+			
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+	
+	public static Connection getDB() {
+		
+		return dbConn; 
+	}
+	
+}

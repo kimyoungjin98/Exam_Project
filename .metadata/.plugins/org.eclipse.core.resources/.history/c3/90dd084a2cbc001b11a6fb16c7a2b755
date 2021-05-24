@@ -1,0 +1,10 @@
+package com.callor.todo.model;
+
+public class TodoVO {
+
+	private Long td_seq;	
+	private String td_place;	
+	private String td_date;	
+	private String td_time;	
+	private String td_content;	
+}
