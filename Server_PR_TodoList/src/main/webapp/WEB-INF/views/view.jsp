@@ -25,7 +25,12 @@ document.addEventListener("DOMContentLoaded",function(ev){
 			
 		} else if (cName == "delete"){
 			
-			document.location.href="${rootPath}/todo/delete?td_seq=" + ${TD.td_seq}
+			if(confirm("삭제 하시겠습니까?")){
+				
+				document.location.href="${rootPath}/todo/delete?td_seq=" + ${TD.td_seq}
+				
+			}
+			
 			
 		} 
 		
@@ -33,26 +38,40 @@ document.addEventListener("DOMContentLoaded",function(ev){
 })
 </script>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
-.jm-font {
-		font-family: 'Noto Sans KR', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&family=Roboto+Slab:wght@100;600&display=swap');
+* {
+		font-family: 'Nanum Myeongjo', serif;
+		font-family: 'Roboto Slab', serif;
 	}
+	
+	body {
+	background:linear-gradient(to bottom, #3d7eaa, #ffe47a);
+	background-repeat: repeat-x;
+	padding-bottom:200%
+	
+    }
+    
+    tbody{
+    	background-color: white;
+    }
 
 	table {
-		border:2px solid #1c92d2;
+		border:2px solid #ffe47a;
 		width:100%;
 		margin:10px auto;
 		text-align: center;
 		font-size:30px;
+		background-color: white;
 	}
 	
 	table th {
 	
-		background-color:#1c92d2;
+		background-color:#ffe47a;
+		color:white;
 	}
 	
 	button{
-		background-color: #1c92d2;
+		background-color: #ffe47a;
 		color:white;
 		font-size:20px;
 		cursor:pointer;

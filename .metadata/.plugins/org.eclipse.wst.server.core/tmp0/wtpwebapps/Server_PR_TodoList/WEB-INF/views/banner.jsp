@@ -8,22 +8,89 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function(){
+	document.querySelector("nav").addEventListener("click",function(ev){
+		
+		let name = ev.target.textContent
+		
+		if(name == "Home"){
+			
+			document
+			.location
+			.href="${rootPath}"
+			
+			
+		}
+		
+		
+	})
+	
+})
+
+</script>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
-.jm-font {
-		font-family: 'Noto Sans KR', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&family=Roboto+Slab:wght@100;600&display=swap');
+* {
+		font-family: 'Nanum Myeongjo', serif;
+		font-family: 'Roboto Slab', serif;
 	}
+
+nav li:hover {
+
+	cursor:pointer;
+	
+}
+
 h1 {
 	margin:auto;
 	text-align: center;
 	font-size:50px;
-	background:linear-gradient(to right, #1c92d2, #f2fcfe);
+	background:linear-gradient(to bottom, #3d7eaa, #ffe47a);
+ 
 	color:white;
+	padding:40px;
+	font-weight: lighter;
+
+}
+
+nav {
+
+	background:linear-gradient(to top, #3d7eaa, #ffe47a);
+	
+	color:white;
+	
+	font-size:20px;
+	
+	
+}
+
+nav ul{
+	margin:0px;
+	padding:10px;
+}
+
+nav li{
+	display:inline-block;
+	list-style:none;
+	padding:10px;
+	margin:0;
 }
 
 
 </style>
 <body>
 	<h1>TO DO LIST</h1>
+	
+	<nav>
+	<ul>
+	<li>Home</li>
+	<li>날짜별 검색</li>
+	<li >내용으로 검색</li>
+	
+	</ul>
+	
+	
+	</nav>
 </body>
 </html>

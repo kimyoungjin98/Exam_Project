@@ -33,9 +33,10 @@ document.addEventListener("DOMContentLoaded", function(){
 </script>
 <style>
 
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
-.jm-font {
-		font-family: 'Noto Sans KR', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&family=Roboto+Slab:wght@100;600&display=swap');
+* {
+		font-family: 'Nanum Myeongjo', serif;
+		font-family: 'Roboto Slab', serif;
 	}
 
 	label{
@@ -47,12 +48,18 @@ document.addEventListener("DOMContentLoaded", function(){
 	}
 	
 	button{
-		background-color: #1c92d2;
+		background-color: #ffe47a;
 		color:white;
 		font-size:20px;
 		cursor:pointer;
 	}
 	
+	body {
+	background:linear-gradient(to bottom, #3d7eaa, #ffe47a);
+	background-repeat: repeat-x;
+	padding-bottom:200%
+	
+}
 
 </style>
 <body>

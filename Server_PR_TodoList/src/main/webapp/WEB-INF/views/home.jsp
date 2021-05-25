@@ -12,16 +12,33 @@
 <script>
 document.addEventListener("DOMContentLoaded",function(ev){
 	
-	document.querySelector("table")
+	document.querySelector("body")
 	.addEventListener("click", function(ev){
 		
 		let tag = ev.target.tagName
+		let cName = ev.target.className
 		
 		if(tag == "TD"){
 			
 			let seq = ev.target.closest("TR").dataset.seq
 			
 			document.location.href="${rootPath}/todo/view?td_seq=" + seq
+			
+		}
+		
+		if(cName == "update"){
+			
+			var checkbox = $("input[name=list]:checked");
+			
+			if(checkbox.length > 1){
+				alert("수정하기는 1개만 선택하세요")
+				
+				return false;
+			}
+			
+		} else if(cName == "delete"){
+			
+			
 			
 		}
 		
@@ -33,12 +50,18 @@ document.addEventListener("DOMContentLoaded",function(ev){
 </script>
 <style>
 
+body {
+	background:linear-gradient(to bottom, #3d7eaa, #ffe47a);
+	background-repeat: repeat-x;
+	padding-bottom:200%
+	
+}
 
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
-.jm-font {
-		font-family: 'Noto Sans KR', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&family=Roboto+Slab:wght@100;600&display=swap');
+* {
+		font-family: 'Nanum Myeongjo', serif;
+		font-family: 'Roboto Slab', serif;
 	}
-
 
 table {
 	width:100%;
@@ -46,6 +69,8 @@ table {
 	margin:3px auto;
 	font-size:20px;
 	padding:10px;
+	background-color: white;
+	border:1px solid white;
 	
 }
 
@@ -56,17 +81,18 @@ table td{
 	
 }
 
-table tr:hover{
-	background-color: #1c92d2;
+table td:hover{
+	background-color: #ffe47a;
+	opacity: 0.5;
 }
 
-table tr{
-	border:1px solid #1c92d2;
-	outline:1px solid #1c92d2;
+table div{
+	border:1px solid #ffe47a;
+	
 }
 
 table th{
-	background-color: #1c92d2;
+	background-color:#ffe47a;
 	color:white;
 	
 }
@@ -79,15 +105,24 @@ table th{
 	<p>
 	<%@ include file="/WEB-INF/views/write.jsp" %>
 	<p>
+	
+	<button class="update" type="button">수정하기</button>
+	<button class="delete" type="button">삭제하기</button>
+	
 		<table>
+		<div>
+		<th>선택</th>
 		<th>No.</th>
 		<th>할일</th>
 		<th>작성일자</th>
 		<th>작성시각</th>
 		<th>장소</th>
+		</div>
 
 		<c:forEach items="${TDLIST}" var="TD" varStatus="index">
 			<tr data-seq="${TD.td_seq}">
+			
+			<td><input type="checkbox" value="${TD.td_seq}" name="list">
 				<td>${index.count}</td>
 				<td>${TD.td_content}</td>
 				<td>${TD.td_date}</td>
