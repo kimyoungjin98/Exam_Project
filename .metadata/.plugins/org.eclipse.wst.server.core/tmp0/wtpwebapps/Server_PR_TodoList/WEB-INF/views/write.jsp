@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function(ev){
 	}
 	
 	button{
-		background-color: #ffe47a;
+		background-color: black;
 		color:white;
 		font-size:20px;
 		cursor:pointer;

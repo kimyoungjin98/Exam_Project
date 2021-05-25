@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function(){
 	}
 	
 	button{
-		background-color: #ffe47a;
+		background-color: black;
 		color:white;
 		font-size:20px;
 		cursor:pointer;
@@ -57,7 +57,8 @@ document.addEventListener("DOMContentLoaded", function(){
 	body {
 	background:linear-gradient(to bottom, #3d7eaa, #ffe47a);
 	background-repeat: repeat-x;
-	padding-bottom:200%
+	background-size:cover;
+	background-image: url("https://mblogthumb-phinf.pstatic.net/20150905_278/unesco1128_1441440037443oRg50_GIF/6_%281%29.gif?type=w2");
 	
 }
 

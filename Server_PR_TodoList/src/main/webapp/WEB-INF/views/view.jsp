@@ -47,16 +47,17 @@ document.addEventListener("DOMContentLoaded",function(ev){
 	body {
 	background:linear-gradient(to bottom, #3d7eaa, #ffe47a);
 	background-repeat: repeat-x;
-	padding-bottom:200%
+	background-size:cover;
+	background-image: url("https://mblogthumb-phinf.pstatic.net/20150905_278/unesco1128_1441440037443oRg50_GIF/6_%281%29.gif?type=w2");
 	
-    }
+}
     
     tbody{
     	background-color: white;
     }
 
 	table {
-		border:2px solid #ffe47a;
+		border:2px solid black;
 		width:100%;
 		margin:10px auto;
 		text-align: center;
@@ -66,16 +67,18 @@ document.addEventListener("DOMContentLoaded",function(ev){
 	
 	table th {
 	
-		background-color:#ffe47a;
+		background-color:black;
 		color:white;
 	}
 	
-	button{
-		background-color: #ffe47a;
+	button {
+		background-color: black;
 		color:white;
 		font-size:20px;
 		cursor:pointer;
 	}
+	
+	
 </style>
 <body>
 <%@ include file="/WEB-INF/views/banner.jsp" %>

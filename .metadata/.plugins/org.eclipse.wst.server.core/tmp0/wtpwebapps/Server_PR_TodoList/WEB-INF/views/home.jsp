@@ -15,8 +15,9 @@ document.addEventListener("DOMContentLoaded",function(ev){
 	document.querySelector("body")
 	.addEventListener("click", function(ev){
 		
-		let tag = ev.target.tagName
-		let cName = ev.target.className
+		let tag = ev.target.tagName;
+		let content = ev.target.className;
+		
 		
 		if(tag == "TD"){
 			
@@ -26,23 +27,28 @@ document.addEventListener("DOMContentLoaded",function(ev){
 			
 		}
 		
-		if(cName == "update"){
+		if(content == "update"){
 			
-			var checkbox = $("input[name=list]:checked");
+			alert("ㅎㅇ")
+		<%--	alert($("input:checkbox[name=list]:checked").length)
 			
-			if(checkbox.length > 1){
-				alert("수정하기는 1개만 선택하세요")
+			$("input:checkbox[name=list]").each(function){
 				
-				return false;
-			}
+				if($("input:checkbox[name=list]:checked").length > 1){
+					alert("수정하기는 1개만 선택하세요")
+					
+					return false;
+				} 					
+				
+			}--%>
 			
-		} else if(cName == "delete"){
 			
 			
-			
-		}
+		} 
 		
 	})
+	
+	
 	
 })
 
@@ -53,7 +59,8 @@ document.addEventListener("DOMContentLoaded",function(ev){
 body {
 	background:linear-gradient(to bottom, #3d7eaa, #ffe47a);
 	background-repeat: repeat-x;
-	padding-bottom:200%
+	background-size:cover;
+	background-image: url("https://mblogthumb-phinf.pstatic.net/20150905_278/unesco1128_1441440037443oRg50_GIF/6_%281%29.gif?type=w2");
 	
 }
 
@@ -81,20 +88,29 @@ table td{
 	
 }
 
-table td:hover{
-	background-color: #ffe47a;
-	opacity: 0.5;
+table tr:hover{
+	background-image: url("https://mblogthumb-phinf.pstatic.net/MjAxODAyMDNfNjIg/MDAxNTE3NjQ3OTQ3NzA0.tTq02h2Jh8KjZZWaaznmaqm6fCKoK6lEHw7BCpy5wskg.w6jv7_PNFNkSIfhPG5Z-nw5ewY-eY_6_ZwLeoju8c0Ug.GIF.rookiez1/09.gif?type=w2");
+	opacity: none;
+	color:white;
 }
 
 table div{
-	border:1px solid #ffe47a;
+	background-image: url("https://mblogthumb-phinf.pstatic.net/MjAxODAyMDNfNjIg/MDAxNTE3NjQ3OTQ3NzA0.tTq02h2Jh8KjZZWaaznmaqm6fCKoK6lEHw7BCpy5wskg.w6jv7_PNFNkSIfhPG5Z-nw5ewY-eY_6_ZwLeoju8c0Ug.GIF.rookiez1/09.gif?type=w2");
+	border:1px solid black;
 	
 }
 
 table th{
-	background-color:#ffe47a;
+	background-color:black;
 	color:white;
 	
+}
+
+input.update , input.delete{
+		background-color: black;
+		color:white;
+		font-size:20px;
+		cursor:pointer;
 }
 
 
@@ -105,9 +121,9 @@ table th{
 	<p>
 	<%@ include file="/WEB-INF/views/write.jsp" %>
 	<p>
-	
-	<button class="update" type="button">수정하기</button>
-	<button class="delete" type="button">삭제하기</button>
+
+	<input type="submit" value="수정하기" class="update"></input>
+	<input type="submit" value="삭제하기" class="delete"></input>
 	
 		<table>
 		<div>

@@ -46,7 +46,9 @@ h1 {
 	margin:auto;
 	text-align: center;
 	font-size:50px;
-	background:linear-gradient(to bottom, #3d7eaa, #ffe47a);
+	background-image:url("https://mblogthumb-phinf.pstatic.net/20150905_10/unesco1128_1441440039203ranAH_GIF/9.gif?type=w2");
+	background-size:cover;
+	background-repeat:repeat-x;
  
 	color:white;
 	padding:40px;
@@ -56,7 +58,7 @@ h1 {
 
 nav {
 
-	background:linear-gradient(to top, #3d7eaa, #ffe47a);
+	background:black;
 	
 	color:white;
 	
